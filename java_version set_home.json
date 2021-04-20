@@ -1,0 +1,6 @@
+{"options":
+ [
+     {"long_name": "version", "has_arg": "POSITIONAL"}
+ ],
+ "help": true
+}

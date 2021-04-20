@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+if [[ "${BASH_SOURCE[0]}" = "${0}" ]]; then
+    >&2 echo "java_version must be sourced"
+    exit 1
+fi
+cmdout="$(CMD_NAME="java_version" bash java_version.sh "$@" 2>&1)"
+cmdval=$?
+case "$cmdval" in
+    101)
+	echo "$cmdout"
+	;;
+    102)
+	echo "$cmdout"
+	;;
+    0)
+	while read -r line; do
+	    IFS="=" read -r var value <<< "$line"
+	    export "$var"="$value"
+	done <<< "$cmdout"
+	;;
+    *)
+	if [ -n "$cmdout" ]; then
+	    >&2 echo "$cmdout"
+	fi
+	;;
+esac
