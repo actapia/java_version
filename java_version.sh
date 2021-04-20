@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd "$(dirname "${BASH_SOURCE[0]}")"
 source optionsh.sh
 declare -A MYARGS
 if [ -z "$CMD_NAME" ]; then
