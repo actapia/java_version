@@ -27,6 +27,9 @@ case "${MYARGS[command]}" in
     "set_path")
 	CMD_NAME="$CMD_NAME set_path" bash java_version_set_path.sh "${@:2}"
 	;;
+    "status")
+	CMD_NAME="$CMD_NAME status" bash java_version_status.sh "${@:2}"
+	;;
     *)
 	>&2 echo "Unrecognized command ${MYARGS[command]}."
 	exit 1	

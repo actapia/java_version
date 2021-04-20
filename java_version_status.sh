@@ -9,7 +9,6 @@ parse_result=$?
 if [ $parse_result -ne 0 ]; then
     exit $parse_result
 fi
-source java_versions.sh
-for jdk in "${!JDK_AA[@]}"; do
-    echo "$jdk ${JDK_AA[$jdk]}"
-done | column -t -s' '
+echo "JAVA_HOME=$JAVA_HOME"
+java --version
+exit 102

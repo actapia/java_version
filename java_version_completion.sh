@@ -8,7 +8,7 @@ _jv_complete()
 
     case ${COMP_CWORD} in
         1)
-            COMPREPLY=($(compgen -W "ls set set_home set_path" -- ${cur}))
+            COMPREPLY=($(compgen -W "ls set set_home set_path status" -- ${cur}))
             ;;
         2)
             case ${prev} in
