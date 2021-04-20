@@ -24,3 +24,6 @@ case "$cmdval" in
 	fi
 	;;
 esac
+# Clean up.
+unset cmdout
+unset cmdval
